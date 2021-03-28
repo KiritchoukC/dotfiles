@@ -1,0 +1,5 @@
+source ./.vimrc
+
+" specific vs config
+nnoremap <leader>gd :vsc Edit.GoToImplementation<CR>
+nnoremap <leader>t :vsc RunTestsInClass<CR>

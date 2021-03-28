@@ -1,0 +1,6 @@
+\.stow*
+\.git
+\.gitignore
+^README.*
+^LICENSE.*
+^COPYING
