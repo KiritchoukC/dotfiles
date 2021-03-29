@@ -132,7 +132,9 @@ alias ls="lsd"
 
 alias zshcfg="nvim ~/.zshrc"
 alias ozshcfg="nvim ~/.oh-my-zsh"
-alias dotcfg="nvim ~/git/dotfiles/."
+alias dotcfg="nvim ~/dotfiles/."
+alias nvp="nvim ~/dotfiles/.config/nvim/init.vim"
+alias nvcfg="nvim ~/dotfiles/.config/nvim/plugin/."
 alias tmuxcfg="nvim ~/.tmux.conf"
 
 alias neofetch='neofetch --ascii_colors 2 7 --colors 2 7 2 2 7 7 2'

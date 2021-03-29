@@ -1,6 +1,9 @@
 \.stow*
 \.git
 \.gitignore
+\.config/dconf/*
+\.oh-my*
+
 ^README.*
 ^LICENSE.*
 ^COPYING
