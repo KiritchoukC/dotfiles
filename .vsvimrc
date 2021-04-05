@@ -1,5 +1,28 @@
-source ./.vimrc
+" source ./.vimrc
+source ~/.vimrc
 
 " specific vs config
+nnoremap L $
+vnoremap L $
+nnoremap H _
+vnoremap H _
+
+nnoremap gh :vsc Edit.QuickInfo<CR>
+vnoremap <C-j> :vsc Edit.MoveSelectedLinesDown<CR>
+vnoremap <C-k> :vsc Edit.MoveSelectedLinesUp<CR>
 nnoremap <leader>gd :vsc Edit.GoToImplementation<CR>
-nnoremap <leader>t :vsc RunTestsInClass<CR>
+nnoremap gr :vsc Edit.FindAllReferences<CR>
+nnoremap ZA :wa<CR> :vsc Window.CloseAllDocuments<CR>
+nnoremap ZW :vsc Window.Windows<CR>
+nnoremap <leader>to :wa<CR> :tabonly<CR>
+nnoremap <leader>te :vsc TestExplorer.ShowTestExplorer<CR>
+nnoremap <leader>tt :vsc TestExplorer.RunAllTestsInContext<CR>
+nnoremap <leader>td :vsc TestExplorer.DebugAllTestsInContext<CR>
+nnoremap <leader>ta :vsc TestExplorer.RunAllTests<CR>
+nnoremap <leader>en :vsc View.NextError<CR>
+nnoremap <leader>rr :vsc Refactor.Rename<CR><ESC>i
+nnoremap <leader>ro :vsc Refactor.ReorderParameters<CR>
+nnoremap <leader>gh :vsc Window.KeepTabOpen<CR>
+nnoremap <leader><C-l> :vsc Window.MoveToNextTabGroup<CR>
+nnoremap <leader><C-h> :vsc Window.MoveToPreviousTabGroup<CR>
+nnoremap <leader>bb :vsc EditorContextMenus.CodeWindow.Breakpoint.InsertBreakpoint<CR>

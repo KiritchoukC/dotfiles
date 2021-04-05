@@ -141,4 +141,4 @@ alias neofetch='neofetch --ascii_colors 2 7 --colors 2 7 2 2 7 7 2'
 neofetch
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

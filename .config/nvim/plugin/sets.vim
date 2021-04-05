@@ -1,6 +1,6 @@
 set exrc
-set relativenumber
 set nu
+set relativenumber
 set nohlsearch
 set hidden
 set noerrorbells
@@ -17,7 +17,7 @@ set incsearch
 set termguicolors
 set scrolloff=8
 set noshowmode
-set colorcolumn=80
+set colorcolumn=90
 set signcolumn=yes
 set cmdheight=2
 set updatetime=50
