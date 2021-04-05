@@ -1,4 +1,5 @@
 neofetch --ascii_colors 2 7 --colors 2 7 2 2 7 7 2
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -10,7 +11,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/clem/.oh-my-zsh"
+export ZSH=".oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -94,8 +95,6 @@ plugins=(
     colorize
     node
     tmux
-
-    chucknorris
 )
 
 source $ZSH/oh-my-zsh.sh
