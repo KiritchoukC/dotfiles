@@ -1,3 +1,4 @@
+neofetch --ascii_colors 2 7 --colors 2 7 2 2 7 7 2
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -133,12 +134,12 @@ alias ls="lsd"
 alias zshcfg="nvim ~/.zshrc"
 alias ozshcfg="nvim ~/.oh-my-zsh"
 alias dotcfg="nvim ~/git/dotfiles/."
+alias nvp="nvim ~/dotfiles/.config/nvim/init.vim"
+alias nvcfg="nvim ~/dotfiles/.config/nvim/plugin/."
 alias tmuxcfg="nvim ~/.tmux.conf"
 
 alias neofetch='neofetch --ascii_colors 2 7 --colors 2 7 2 2 7 7 2'
 # alias tmux="TERM=xterm-256color tmux"
 
-neofetch
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
