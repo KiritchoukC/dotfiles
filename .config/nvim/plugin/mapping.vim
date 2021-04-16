@@ -1,6 +1,6 @@
 let mapleader = " "
 
-inoremap jk <ESC>
+" inoremap jk <ESC>
 
 nmap J 5j
 nmap K 5k

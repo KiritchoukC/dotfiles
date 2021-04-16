@@ -2,6 +2,7 @@
 source ~/.vimrc
 
 " specific vs config
+inoremap ao <ESC>
 nnoremap L $
 vnoremap L $
 nnoremap H _
