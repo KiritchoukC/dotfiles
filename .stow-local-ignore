@@ -1,6 +1,7 @@
 \.git
 \.gitignore
 \.config/dconf/*
+\.config/configstore/*
 \.oh-my*
 ^README.*
 ^LICENSE.*

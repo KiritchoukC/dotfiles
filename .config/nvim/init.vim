@@ -15,6 +15,7 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'justinmk/vim-sneak'
 Plug 'unblevable/quick-scope'
 Plug 'junegunn/fzf'
+Plug 'preservim/nerdtree'
 Plug 'tree-sitter/tree-sitter'
 Plug 'sheerun/vim-polyglot'
 " DOTNET

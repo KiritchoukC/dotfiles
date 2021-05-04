@@ -9,12 +9,13 @@ nnoremap H _
 vnoremap H _
 
 nnoremap gh :vsc Edit.QuickInfo<CR>
-vnoremap <C-j> :vsc Edit.MoveSelectedLinesDown<CR>
-vnoremap <C-k> :vsc Edit.MoveSelectedLinesUp<CR>
-nnoremap <leader>gd :vsc Edit.GoToImplementation<CR>
+vnoremap <C-e> :vsc Edit.MoveSelectedLinesDown<CR>
+vnoremap <C-i> :vsc Edit.MoveSelectedLinesUp<CR>
 nnoremap gr :vsc Edit.FindAllReferences<CR>
 nnoremap ZA :wa<CR> :vsc Window.CloseAllDocuments<CR>
 nnoremap ZW :vsc Window.Windows<CR>
+nnoremap <leader>gd :vsc Edit.GoToImplementation<CR>
+nnoremap <leader>hs :split<CR><C-k>ZZ<C-l>
 nnoremap <leader>to :wa<CR> :tabonly<CR>
 nnoremap <leader>te :vsc TestExplorer.ShowTestExplorer<CR>
 nnoremap <leader>tt :vsc TestExplorer.RunAllTestsInContext<CR>
