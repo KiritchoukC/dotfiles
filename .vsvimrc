@@ -30,3 +30,4 @@ nnoremap <leader><C-h> :vsc Window.MoveToPreviousTabGroup<CR>
 nnoremap <leader>bb :vsc EditorContextMenus.CodeWindow.Breakpoint.InsertBreakpoint<CR>
 nnoremap s <Nop>
 nnoremap <leader>sa :vsc Tools.InvokeAceJumpCommand<CR>
+nnoremap <leader>nu :vsc Project.ManageNugetPackages<CR>
