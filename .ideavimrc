@@ -1,0 +1,25 @@
+source ~/.vimrc
+
+""" Plugins  --------------------------------
+set ideajoin
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set easymotion
+set textobj-entire
+set ReplaceWithRegister
+
+""" Mappings --------------------------------
+map <leader>f <Plug>(easymotion-s)
+map <leader>e <Plug>(easymotion-f)
+
+map <leader>dd <Action>(Debug)
+map <leader>rr <Action>(RenameElement)
+map <leader>cc <Action>(Stop)
+
+map <leader>ss <Action>(SelectInProjectView)
+map <leader>en <Action>(GotoNextError)
+
+map <leader>bb <Action>(ToggleLineBreakpoint)
+map <leader>ii <Action>(FileStructurePopup)
