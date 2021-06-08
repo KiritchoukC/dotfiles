@@ -18,6 +18,9 @@ Plug 'junegunn/fzf'
 Plug 'preservim/nerdtree'
 Plug 'tree-sitter/tree-sitter'
 Plug 'sheerun/vim-polyglot'
+" EXPLORER
+Plug 'tpope/vim-vinegar'
+Plug 'go2null/vim-oil'
 " DOTNET
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'dense-analysis/ale'
