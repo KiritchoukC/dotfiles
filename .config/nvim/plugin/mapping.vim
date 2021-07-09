@@ -17,13 +17,9 @@ nnoremap <leader>j J | vnoremap <leader>j J
 nnoremap <leader>k K | vnoremap <leader>k K
 " reload .vimrc
 nnoremap <leader>x :so $MYVIMRC<CR>
-<<<<<<< HEAD
-nnoremap <leader>w :wa<CR>
-=======
 " save buffer
-nnoremap <leader>w :w<CR>
+nnoremap <leader>w :wa<CR>
 " return to line before the caret
->>>>>>> b6a61836c6b2b8326738f84d0cef6ada2f460d60
 nnoremap <leader>i i<CR><ESC>
 " return to line after the caret
 nnoremap <leader>a a<CR><ESC>
@@ -83,7 +79,6 @@ nnoremap I 5k | vnoremap I 5k
 nnoremap O $ | vnoremap O $
 
 " remapping vim neio to hjkl
-<<<<<<< HEAD
 nnoremap k n
 nnoremap K N
 vnoremap k n
@@ -103,17 +98,6 @@ nnoremap L O
 nnoremap l o
 vnoremap L O
 vnoremap l o
-=======
-nnoremap h n | vnoremap h n
-nnoremap j e | vnoremap j e
-nnoremap k i | vnoremap k i
-nnoremap l o | vnoremap l o
-
-nnoremap H N | vnoremap H N
-nnoremap J E | vnoremap J E
-nnoremap K I | vnoremap K I
-nnoremap L O | vnoremap L O
->>>>>>> b6a61836c6b2b8326738f84d0cef6ada2f460d60
 
 " neio text object
 nn viw viw
@@ -123,6 +107,7 @@ nn viP viP
 nn viB viB
 nn vi' vi'
 nn vi" vi"
+nn vit vit
 
 " navigating windows
 noremap <leader>wn <C-w>h
@@ -135,20 +120,12 @@ noremap <leader>wN <C-w>H
 noremap <leader>wE <C-w>J
 noremap <leader>wI <C-w>K
 noremap <leader>wO <C-w>L
-<<<<<<< HEAD
-
-" scrolling
-noremap <C-j> <C-e>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sane redo.
 noremap U <C-r>
-" +/- increment and decrement.
-nnoremap + <C-a>|nnoremap - <C-x>
-"save all
-nnoremap Zz :wa<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VS Code
@@ -156,5 +133,3 @@ nnoremap Zz :wa<CR>
 if exists('g:vscode')
     nnoremap <leader>w :Write<CR>
 endif
-=======
->>>>>>> b6a61836c6b2b8326738f84d0cef6ada2f460d60
