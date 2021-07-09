@@ -25,7 +25,7 @@ vnoremap <leader>k K
 
 " leader shortcuts
 nnoremap <leader>x :so $MYVIMRC<CR>
-nnoremap <leader>w :w<CR>
+nnoremap <leader>w :wa<CR>
 nnoremap <leader>i i<CR><ESC>
 nnoremap <leader>a a<CR><ESC>
 nnoremap <leader>l o<ESC>
@@ -44,6 +44,8 @@ nnoremap <leader><leader>pp Vpyy
 
 " --- COLEMAK ---
 inoremap ao <ESC>
+inoremap a; <ESC>A;<ESC>
+inoremap a, <ESC>A,<ESC>
 
 " remapping hjkl to neio
 nnoremap n h
@@ -66,25 +68,34 @@ vnoremap I 5k
 vnoremap O $
 
 " remapping vim neio to hjkl
-nnoremap h n
-nnoremap H N
-vnoremap h n
-vnoremap H N
+nnoremap k n
+nnoremap K N
+vnoremap k n
+vnoremap K N
 
 nnoremap j e
 nnoremap J E
 vnoremap j e
 vnoremap J E
 
-nnoremap k i
-nnoremap K I
-vnoremap k i
-vnoremap K I
+nnoremap h i
+nnoremap H I
+vnoremap h i
+vnoremap H I
 
 nnoremap L O
 nnoremap l o
 vnoremap L O
 vnoremap l o
+
+" neio text object
+nn viw viw
+nn vib vib
+nn vip vip
+nn viP viP
+nn viB viB
+nn vi' vi'
+nn vi" vi"
 
 " navigating windows
 noremap <leader>wn <C-w>h
@@ -108,3 +119,12 @@ noremap <C-j> <C-e>
 noremap U <C-r>
 " +/- increment and decrement.
 nnoremap + <C-a>|nnoremap - <C-x>
+"save all
+nnoremap Zz :wa<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VS Code
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if exists('g:vscode')
+    nnoremap <leader>w :Write<CR>
+endif

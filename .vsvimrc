@@ -1,13 +1,6 @@
 " source ./.vimrc
 source ~/.vimrc
 
-" specific vs config
-inoremap ao <ESC>
-nnoremap L $
-vnoremap L $
-nnoremap H _
-vnoremap H _
-
 nnoremap gh :vsc Edit.QuickInfo<CR>
 vnoremap <C-e> :vsc Edit.MoveSelectedLinesDown<CR>
 vnoremap <C-i> :vsc Edit.MoveSelectedLinesUp<CR>
@@ -21,13 +14,26 @@ nnoremap <leader>te :vsc TestExplorer.ShowTestExplorer<CR>
 nnoremap <leader>tt :vsc TestExplorer.RunAllTestsInContext<CR>
 nnoremap <leader>td :vsc TestExplorer.DebugAllTestsInContext<CR>
 nnoremap <leader>ta :vsc TestExplorer.RunAllTests<CR>
+nnoremap <leader>ti :vsc RunTestsInClass<CR>
+nnoremap <leader>ve :vsc View.ErrorList<CR>
 nnoremap <leader>en :vsc View.NextError<CR>
+nnoremap <leader>fn :vsc Edit.GoToNextLocation<CR>
+nnoremap <leader>fp :vsc Edit.GoToPrevLocation<CR>
+nnoremap <leader>vo :vsc View.Output<CR>
+nnoremap <leader>vc :vsc View.TfsPendingChanges<CR>
 nnoremap <leader>rr :vsc Refactor.Rename<CR><ESC>i
 nnoremap <leader>ro :vsc Refactor.ReorderParameters<CR>
 nnoremap <leader>gh :vsc Window.KeepTabOpen<CR>
-nnoremap <leader><C-l> :vsc Window.MoveToNextTabGroup<CR>
-nnoremap <leader><C-h> :vsc Window.MoveToPreviousTabGroup<CR>
+nnoremap <leader>gp :vsc Window.PinTab<CR>
+nnoremap <leader>wO :vsc Window.MoveToNextTabGroup<CR>
+nnoremap <leader>wN :vsc Window.MoveToPreviousTabGroup<CR>
 nnoremap <leader>bb :vsc EditorContextMenus.CodeWindow.Breakpoint.InsertBreakpoint<CR>
 nnoremap s <Nop>
 nnoremap <leader>sa :vsc Tools.InvokeAceJumpCommand<CR>
 nnoremap <leader>nu :vsc Project.ManageNugetPackages<CR>
+nnoremap <leader>z= :vsc Edit.AlignByEquals<CR>
+nnoremap <leader>z, :vsc Edit.AlignByString<CR>
+
+nnoremap <leader>/ :vsc Edit.CommentSelection<CR>
+nnoremap <leader>? :vsc Edit.UncommentSelection<CR>
+nnoremap <leader>6 :vsc Build.BuildSolution<CR>

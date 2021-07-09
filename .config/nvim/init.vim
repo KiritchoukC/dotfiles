@@ -23,5 +23,7 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'dense-analysis/ale'
 call plug#end()
 
-let g:airline_theme='onedark'
-colorscheme onedark
+if !exists('g:vscode')
+    let g:airline_theme='onedark'
+    colorscheme onedark
+endif
