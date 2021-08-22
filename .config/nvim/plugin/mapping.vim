@@ -6,19 +6,20 @@ let mapleader = " "
 " Sane redo.
 noremap U <C-r>
 " +/- increment and decrement.
-nnoremap + <C-a>|nnoremap - <C-x>
 " move line down
 vnoremap <C-e> :m '>+1<CR>gv=gv
 " move line up
 vnoremap <C-i> :m '>-2<CR>gv=gv
 " join lines
-nnoremap <leader>j J | vnoremap <leader>j J
+nnoremap <leader>j J
+vnoremap <leader>j J
 " get help for the command under the caret
-nnoremap <leader>k K | vnoremap <leader>k K
+nnoremap <leader>k K
+vnoremap <leader>k K
 " reload .vimrc
 nnoremap <leader>x :so $MYVIMRC<CR>
 " save buffer
-nnoremap <leader>w :wa<CR>
+nnoremap <leader>ww :wa<CR>
 " return to line before the caret
 nnoremap <leader>i i<CR><ESC>
 " return to line after the caret
@@ -42,13 +43,17 @@ nnoremap <leader>hs :split<CR>
 " System clipboard
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " yank to system cb
-nnoremap <leader>y "+y | vnoremap <leader>y "+y
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
 " cut to system cb
-nnoremap <leader>d "+d | vnoremap <leader>d "+d
+nnoremap <leader>d "+d
+vnoremap <leader>d "+d
 " past from system cb after caret
-nnoremap <leader>p "+p | vnoremap <leader>p "+p
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
 " past from system cb before caret
-nnoremap <leader>P "+P | vnoremap <leader>P "+P
+nnoremap <leader>P "+P
+vnoremap <leader>P "+P
 " yank the whole buffer to system cb
 nnoremap <leader>Y gg"+yG
 " cut the whole buffer to system cb
@@ -65,18 +70,27 @@ nnoremap <leader><leader>pp Vpyy
 inoremap ao <ESC>
 inoremap a; <ESC>A;<ESC>
 inoremap a, <ESC>A,<ESC>
+inoremap a9 ()<ESC>
 
 " remapping hjkl to neio
-nnoremap n h | vnoremap n h
-nnoremap e j | vnoremap e j
-nnoremap i k | vnoremap i k
-nnoremap o l | vnoremap o l
+nnoremap n h
+vnoremap n h
+nnoremap e j
+vnoremap e j
+nnoremap i k
+vnoremap i k
+nnoremap o l
+vnoremap o l
 
 " fast neio moves
-nnoremap N ^ | vnoremap N ^
-nnoremap E 5j | vnoremap E 5j
-nnoremap I 5k | vnoremap I 5k
-nnoremap O $ | vnoremap O $
+nnoremap N ^
+vnoremap N ^
+nnoremap E 5j
+vnoremap E 5j
+nnoremap I 5k
+vnoremap I 5k
+nnoremap O $
+vnoremap O $
 
 " remapping vim neio to hjkl
 nnoremap k n
@@ -122,14 +136,8 @@ noremap <leader>wI <C-w>K
 noremap <leader>wO <C-w>L
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Sane redo.
-noremap U <C-r>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VS Code
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if exists('g:vscode')
-    nnoremap <leader>w :Write<CR>
+    nnoremap <leader>ww :Wall<CR>
 endif

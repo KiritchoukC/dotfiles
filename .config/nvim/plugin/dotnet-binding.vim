@@ -1,5 +1,5 @@
 " add field to constructor for dependency injection
-nnoremap <leader>zi $hvbb"zy/)<CR>i,<CR><ESC>"zph"xyiw/}<CR>Othis.<ESC>"xpa<space>=<space><ESC>"xpA;<ESC>
+nnoremap <leader>zi $hvbb"zy/)<CR>i,<CR><ESC>"zph"xyiw/}<CR>Othis.<ESC>"xpa<space>=<space><ESC>"xpA;<ESC><C-O><C-O>$
 " put usings inside namespace
 nnoremap <leader>zu gg/sing<CR>hV/namespace<CR>kd/{<CR>pV/public\|protected\|private<CR>k>
 " Add interface

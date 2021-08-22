@@ -1,39 +1,103 @@
 " source ./.vimrc
 source ~/.vimrc
 
+nnoremap s <Nop>
 nnoremap gh :vsc Edit.QuickInfo<CR>
 vnoremap <C-e> :vsc Edit.MoveSelectedLinesDown<CR>
 vnoremap <C-i> :vsc Edit.MoveSelectedLinesUp<CR>
 nnoremap gr :vsc Edit.FindAllReferences<CR>
-nnoremap ZA :wa<CR> :vsc Window.CloseAllDocuments<CR>
-nnoremap ZW :vsc Window.Windows<CR>
 nnoremap <leader>gd :vsc Edit.GoToImplementation<CR>
 nnoremap <leader>hs :split<CR><C-k>ZZ<C-l>
 nnoremap <leader>to :wa<CR> :tabonly<CR>
+
+" windows management
+nnoremap ZA :wa<CR> :vsc Window.CloseAllDocuments<CR>
+nnoremap ZP :wa<CR> :vsc Window.CloseAllButPinned<CR>
+nnoremap ZT :wa<CR> :vsc File.CloseAllButThis<CR>
+nnoremap ZW :vsc Window.Windows<CR>
+nnoremap <leader>gh :vsc Window.KeepTabOpen<CR>
+nnoremap <leader>gp :vsc Window.PinTab<CR>
+nnoremap <leader>wO :vsc Window.MoveToNextTabGroup<CR>
+nnoremap <leader>wN :vsc Window.MoveToPreviousTabGroup<CR>
+nnoremap <leader>wf :vsc Window.Float<CR>
+nnoremap <leader>wF :vsc Window.MoveToMainDocumentGroup<CR>
+
+" tests
 nnoremap <leader>te :vsc TestExplorer.ShowTestExplorer<CR>
 nnoremap <leader>tt :vsc TestExplorer.RunAllTestsInContext<CR>
 nnoremap <leader>td :vsc TestExplorer.DebugAllTestsInContext<CR>
 nnoremap <leader>ta :vsc TestExplorer.RunAllTests<CR>
 nnoremap <leader>ti :vsc RunTestsInClass<CR>
-nnoremap <leader>ve :vsc View.ErrorList<CR>
+
+" navigation
 nnoremap <leader>en :vsc View.NextError<CR>
 nnoremap <leader>fn :vsc Edit.GoToNextLocation<CR>
 nnoremap <leader>fp :vsc Edit.GoToPrevLocation<CR>
+nnoremap <leader>rn :vsc Edit.NextHighlightedReference<CR>
+nnoremap <leader>rp :vsc Edit.PreviousHighlightedReference<CR>
+
+" views
+nnoremap <leader>ve :vsc View.ErrorList<CR>
 nnoremap <leader>vo :vsc View.Output<CR>
 nnoremap <leader>vc :vsc View.TfsPendingChanges<CR>
+nnoremap <leader>vr :vsc View.FindReferencesWindow1<CR>
+
+" code edition
 nnoremap <leader>rr :vsc Refactor.Rename<CR><ESC>i
 nnoremap <leader>ro :vsc Refactor.ReorderParameters<CR>
-nnoremap <leader>gh :vsc Window.KeepTabOpen<CR>
-nnoremap <leader>gp :vsc Window.PinTab<CR>
-nnoremap <leader>wO :vsc Window.MoveToNextTabGroup<CR>
-nnoremap <leader>wN :vsc Window.MoveToPreviousTabGroup<CR>
 nnoremap <leader>bb :vsc EditorContextMenus.CodeWindow.Breakpoint.InsertBreakpoint<CR>
-nnoremap s <Nop>
 nnoremap <leader>sa :vsc Tools.InvokeAceJumpCommand<CR>
-nnoremap <leader>nu :vsc Project.ManageNugetPackages<CR>
 nnoremap <leader>z= :vsc Edit.AlignByEquals<CR>
 nnoremap <leader>z, :vsc Edit.AlignByString<CR>
-
 nnoremap <leader>/ :vsc Edit.CommentSelection<CR>
 nnoremap <leader>? :vsc Edit.UncommentSelection<CR>
+
+nnoremap <leader>nu :vsc Project.ManageNugetPackages<CR>
+nnoremap <leader>ns :vsc Tools.ManageNugetPackagesforSolution<CR>
 nnoremap <leader>6 :vsc Build.BuildSolution<CR>
+
+" et specific
+inoremap bsc<SPACE> BaseService<
+inoremap bcs<SPACE> BaseCacheService<
+inoremap bmcs<SPACE> BaseMultiCacheService<
+inoremap ibsc<SPACE> IBaseService<
+inoremap ibcs<SPACE> IBaseCacheService<
+inoremap ibmcs<SPACE> IBaseMultiCacheService<
+
+" Surround simulating bindings
+nnoremap s( ciw(<C-r>")<Esc>
+nnoremap s[ ciw[<C-r>"]<Esc>
+nnoremap s{ ciw{<C-r>"}<Esc>
+nnoremap s< ciw<lt><C-r>"><Esc>
+nnoremap s" ciw"<C-r>""<Esc>
+nnoremap s' ciw'<C-r>"'<Esc>
+nnoremap sw( ciW(<C-r>")<Esc>
+nnoremap sw[ ciW[<C-r>"]<Esc>
+nnoremap sw{ ciW{<C-r>"}<Esc>
+nnoremap sw< ciW<lt><C-r>"><Esc>
+nnoremap sw" ciW"<C-r>""<Esc>
+nnoremap sw' ciW'<C-r>"'<Esc>
+
+" Surround delete bindings
+nnoremap ds( vi(dvhp
+nnoremap ds[ vi[dvhp
+nnoremap ds{ vi{dvhp
+nnoremap ds< vi<dvhp
+nnoremap ds" vi"dvhp
+nnoremap ds' vi'dvhp
+
+" Surround change bindings
+nnoremap cs"' vi"oh<Esc>msvi"l<Esc>cl'<Esc>`scl'<Esc>
+nnoremap cs'" vi'oh<Esc>msvi'l<Esc>cl"<Esc>`scl"<Esc>
+
+" Surround visual selected text
+vnoremap S" c"<C-r>""<Esc>
+vnoremap S' c"<C-r>"'<Esc>
+vnoremap S( c(<C-r>")<Esc>
+vnoremap S[ c[<C-r>"]<Esc>
+vnoremap S{ c{<C-r>"}<Esc>
+vnoremap S< c<lt><C-r>"><Esc>
+vnoremap S* c/*<C-r>"*/<Esc>
+"vnoremap St c<lt>div><CR><C-r>"<Esc>
+" Surround in div tag and edit tag
+vnoremap St c<lt>div><CR><C-r>"<Esc>`<lt>lcw
