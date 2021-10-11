@@ -69,8 +69,6 @@ nnoremap <leader><leader>pp Vpyy
 " --- COLEMAK ---
 inoremap ao <ESC>
 inoremap a; <ESC>A;<ESC>
-inoremap a, <ESC>A,<ESC>
-inoremap a9 ()<ESC>
 
 " remapping hjkl to neio
 nnoremap n h
