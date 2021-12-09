@@ -38,6 +38,8 @@ nnoremap <leader>= gg=G<C-o>
 nnoremap <leader>vs :vs<CR>
 " horizontal split
 nnoremap <leader>hs :split<CR>
+" yank whole buffer
+nnoremap Y ggyG
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " System clipboard

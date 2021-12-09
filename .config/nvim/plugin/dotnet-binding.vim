@@ -15,7 +15,7 @@ nnoremap <silent> yaf ?public\|protected\|private\|function<CR>{jVN/{<CR>%y
 " copy outer method and paste below
 nnoremap <silent> yafp ?public\|protected\|private\|function<CR>{jVN/{<CR>%yn%o<ESC>p
 " cut outer method
-nnoremap <silent> daf ?public\|protected\|private\|function<CR>{jVN/{<CR>%d
+nnoremap <silent> daf ?public\|protected\|private\|function<CR>{VN/{<CR>%d
 " copy inner method
 nnoremap <silent> yif ?public\|protected\|private\|function<CR>/{<CR>jyiB
 " cut inner method
@@ -28,3 +28,7 @@ nnoremap <silent> <leader>?af ?public\|protected\|private\|function<CR>{jVN/{<CR
 nnoremap <silent> <leader>/if ?public\|protected\|private\|function<CR>/{<CR>jVk%k:vsc Edit.CommentSelection<CR>
 " uncomment inner method
 nnoremap <silent> <leader>?if ?public\|protected\|private\|function<CR>/{<CR>jVk%k:vsc Edit.UncommentSelection<CR>
+" find next method
+nnoremap <silent> <leader>nm /public\|protected\|private\|function<CR>f(b
+" find previous method
+nnoremap <silent> <leader>pm ?public\|protected\|private\|function<CR>f(b

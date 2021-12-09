@@ -56,8 +56,8 @@ nnoremap <leader>bb :vsc EditorContextMenus.CodeWindow.Breakpoint.InsertBreakpoi
 nnoremap <leader>sa :vsc Tools.InvokeAceJumpCommand<CR>
 nnoremap <leader>z= :vsc Edit.AlignByEquals<CR>
 nnoremap <leader>z, :vsc Edit.AlignByString<CR>
-nnoremap <leader>/ :vsc Edit.CommentSelection<CR>
-nnoremap <leader>? :vsc Edit.UncommentSelection<CR>
+nnoremap <leader>// :vsc Edit.CommentSelection<CR>
+nnoremap <leader>?? :vsc Edit.UncommentSelection<CR>
 nnoremap <leader>zzu :vsc Edit.RemoveAndSort<CR>
 
 vnoremap <leader>/ :vsc Edit.ToggleLineComment<CR>
