@@ -43,7 +43,7 @@ nvim_tree.setup {
     "alpha",
   },
   auto_close = true,
-  open_on_tab = true,
+  open_on_tab = false,
   hijack_cursor = false,
   update_cwd = true,
   update_to_buf_dir = {
@@ -89,6 +89,7 @@ nvim_tree.setup {
         { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
         { key = "n", cb = tree_cb "close_node" },
         { key = "v", cb = tree_cb "vsplit" },
+        { key = { "<C-x>", "C-h" }, cb = tree_cb "hsplit" },
       },
     },
     number = true,
@@ -98,7 +99,6 @@ nvim_tree.setup {
     cmd = "trash",
     require_confirm = true,
   },
-  quit_on_open = 1,
   git_hl = 1,
   disable_window_picker = 0,
   root_folder_modifier = ":t",
@@ -109,4 +109,9 @@ nvim_tree.setup {
     folder_arrows = 1,
     tree_width = 30,
   },
+  actions = {
+    open_file = {
+      quit_on_open = true,
+    }
+  }
 }

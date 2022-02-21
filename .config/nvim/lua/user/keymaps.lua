@@ -18,6 +18,9 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- All --
+keymap("", "<C-A-L>", "<cmd>NvimTreeToggle<cr>", opts)
+
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-n>", "<C-w>h", opts)
