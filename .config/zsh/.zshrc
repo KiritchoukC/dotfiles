@@ -1,5 +1,3 @@
-# export ZDOTDIR=$HOME/.config/zsh
-# source "$HOME/.config/zsh/.zshrc"
 #!/bin/sh
 export ZDOTDIR=$HOME/.config/zsh
 HISTFILE=~/.zsh_history
@@ -44,7 +42,7 @@ zsh_add_file "zsh-prompt"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "hlissner/zsh-autopair"
-zsh_add_completion "esc/conda-zsh-completion" false
+# zsh_add_completion "esc/conda-zsh-completion" false
 # For more plugins: https://github.com/unixorn/awesome-zsh-plugins
 # More completions https://github.com/zsh-users/zsh-completions
 
@@ -63,7 +61,7 @@ bindkey "^j" down-line-or-beginning-search # Down
 bindkey -r "^u"
 bindkey -r "^d"
 
-# FZF
+# FZF 
 # TODO update for mac
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
@@ -83,7 +81,7 @@ setxkbmap -option caps:escape
 xset r rate 210 40
 
 # Speedy keys
-xset r rate 210 40
+# xset r rate 210 40
 
 # Environment variables set everywhere
 export EDITOR="nvim"
@@ -94,6 +92,8 @@ export BROWSER="brave"
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 # remap caps to escape
-setxkbmap -option caps:escape
+# setxkbmap -option caps:escape
 # swap escape and caps
 # setxkbmap -option caps:swapescape
+
+

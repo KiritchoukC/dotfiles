@@ -1,8 +1,6 @@
-# export ZDOTDIR=$HOME/.config/zsh
-# source "$HOME/.config/zsh/.zshrc"
 #!/bin/sh
 export ZDOTDIR=$HOME/.config/zsh
-HISTFILE=~/.zsh_history
+# HISTFILE=~/.zsh_history
 setopt appendhistory
 
 # some useful options (man zshoptions)
@@ -63,7 +61,7 @@ bindkey "^j" down-line-or-beginning-search # Down
 bindkey -r "^u"
 bindkey -r "^d"
 
-# FZF
+# FZF 
 # TODO update for mac
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
@@ -97,3 +95,4 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 setxkbmap -option caps:escape
 # swap escape and caps
 # setxkbmap -option caps:swapescape
+

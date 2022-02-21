@@ -1,34 +1,56 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    // Add custom actions and keybindings to this array.
-    // To unbind a key combination from your defaults.json, set the command to "unbound".
-    // To learn more about actions and keybindings, visit https://aka.ms/terminal-keybindings
     "actions": 
     [
-        // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
-        // These two lines additionally bind them to Ctrl+C and Ctrl+V.
-        // To learn more about selection, visit https://aka.ms/terminal-selection
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+c"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+n"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+comma"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+down"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+up"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+enter"
+        },
         {
             "command": 
             {
                 "action": "copy",
                 "singleLine": false
-            },
-            "keys": "ctrl+c"
+            }
         },
         {
-            "command": "paste",
-            "keys": "ctrl+v"
+            "command": "paste"
         },
-        // Press Ctrl+Shift+F to open the search box
         {
-            "command": "find",
-            "keys": "ctrl+shift+f"
+            "command": "find"
         },
-        // Press Alt+Shift+D to open a new pane.
-        // - "split": "auto" makes this pane open in the direction that provides the most surface area.
-        // - "splitMode": "duplicate" makes the new pane use the focused pane's profile.
-        // To learn more about panes, visit https://aka.ms/terminal-panes
         {
             "command": 
             {
@@ -52,8 +74,11 @@
             "backgroundImageOpacity": 0.089999999999999997,
             "colorScheme": "MaterialDark",
             "cursorShape": "filledBox",
-            "fontFace": "Cascadia Code",
-            "fontSize": 12,
+            "font": 
+            {
+                "face": "Cascadia Code",
+                "size": 12
+            },
             "padding": "20, 10, 20, 10",
             "startingDirectory": "D:\\Projects",
             "useAcrylic": true
@@ -63,7 +88,10 @@
             {
                 "colorScheme": "One Half Dark",
                 "commandline": "powershell.exe",
-                "fontFace": "MesloLGS NF",
+                "font": 
+                {
+                    "face": "MesloLGS NF"
+                },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
@@ -84,7 +112,10 @@
             {
                 "colorScheme": "One Half Dark",
                 "experimental.retroTerminalEffect": false,
-                "fontFace": "MesloLGS NF",
+                "font": 
+                {
+                    "face": "MesloLGS NF"
+                },
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "icon": "C:\\Users\\Cl\u00e9mentKiritchouk\\AppData\\Local\\Packages\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\LocalState\\ubuntu.png",
