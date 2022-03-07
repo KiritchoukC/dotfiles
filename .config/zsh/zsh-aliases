@@ -5,6 +5,7 @@ alias g='lazygit'
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 alias nvimrc='nvim ~/.config/nvim/'
 alias la='ls -a -l -h'
+alias cat='batcat'
 
 # alias lvim='nvim -u ~/.local/share/lunarvim/lvim/init.lua --cmd "set runtimepath+=~/.local/share/lunarvim/lvim"'
 
@@ -77,3 +78,7 @@ CYGWIN* | MINGW32* | MSYS* | MINGW*)
 	# echo 'Other OS'
 	;;
 esac
+
+# WSL
+alias cki='cd /mnt/c/Users/DCKI485'
+alias yuz='cd /mnt/c/Users/DCKI485/source/repos'

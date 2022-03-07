@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/kiritchoukc/dotfiles/.config/nvim/lua/user'
+let g:netrw_dirhist_7='/home/kiritchoukc/dotfiles'
 let g:netrw_dirhist_6='/home/kiritchoukc/dotfiles/.config/nvim/plugin'
 let g:netrw_dirhist_5='/home/kiritchoukc/dotfiles/.config/nvim'
 let g:netrw_dirhist_4='/home/kiritchoukc/dotfiles/.config/nvim/autoload'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_2='/home/kiritchoukc/dotfiles/.config/nvim/plugin'
 let g:netrw_dirhist_1='/home/kiritchoukc/dotfiles/.config/nvim'
 let g:netrw_dirhist_0='/home/kiritchoukc/dotfiles/.config/nvim/plugin'
 let g:netrw_dirhist_9='/home/kiritchoukc/dotfiles/.config/nvim'
-let g:netrw_dirhist_8='/home/kiritchoukc/dotfiles/.config/nvim/autoload'
-let g:netrw_dirhist_7='/home/kiritchoukc/dotfiles/.config/nvim'

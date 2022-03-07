@@ -39,6 +39,7 @@ zsh_add_file "zsh-exports"
 zsh_add_file "zsh-vim-mode"
 zsh_add_file "zsh-aliases"
 zsh_add_file "zsh-prompt"
+zsh_add_file "zsh-proxy"
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
@@ -78,22 +79,14 @@ compinit
 autoload edit-command-line; zle -N edit-command-line
 # bindkey '^e' edit-command-line
 
-# TODO Remove these
-setxkbmap -option caps:escape
-xset r rate 210 40
-
-# Speedy keys
-xset r rate 210 40
-
 # Environment variables set everywhere
 export EDITOR="nvim"
-export TERMINAL="alacritty"
-export BROWSER="brave"
+export BROWSER="chrome"
 
 # For QT Themes
 export QT_QPA_PLATFORMTHEME=qt5ct
 
-# remap caps to escape
-setxkbmap -option caps:escape
-# swap escape and caps
-# setxkbmap -option caps:swapescape
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
