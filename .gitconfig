@@ -1,0 +1,12 @@
+[core]
+	autocrlf = false
+[user]
+	email = clement.kiritchouk@protonmail.com
+	name = kiritchoukc
+[credential]
+	helper = store
+[alias]
+    p = pull -v
+    c = commit
+    a = add
+    co = checkout

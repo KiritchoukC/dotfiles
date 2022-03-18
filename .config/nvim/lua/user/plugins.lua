@@ -58,6 +58,7 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
+  use "tpope/vim-surround"
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -80,9 +81,15 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use {
+    'weilbith/nvim-code-action-menu',
+    cmd = 'CodeActionMenu',
+  } -- user friendly pop menu for lsp code actions
+  use 'kosayoda/nvim-lightbulb' -- vscode lightbult - showing when a code action is available
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
+  use {"nvim-telescope/telescope-fzf-native.nvim", run = "make" }
 
   -- Treesitter
   use {

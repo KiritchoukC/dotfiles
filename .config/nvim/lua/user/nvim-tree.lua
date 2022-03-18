@@ -86,10 +86,10 @@ nvim_tree.setup {
     mappings = {
       custom_only = false,
       list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "n", cb = tree_cb "close_node" },
+        { key = { "<Right>", "o", "<CR>" }, cb = tree_cb "edit" },
+        { key = { "<Left>", "n" }, cb = tree_cb "close_node" },
         { key = "v", cb = tree_cb "vsplit" },
-        { key = { "<C-x>", "C-h" }, cb = tree_cb "hsplit" },
+        { key = "h", cb = tree_cb "hsplit" },
       },
     },
     number = true,
@@ -100,6 +100,7 @@ nvim_tree.setup {
     require_confirm = true,
   },
   git_hl = 1,
+  highlight_opened_files = 1,
   disable_window_picker = 0,
   root_folder_modifier = ":t",
   show_icons = {

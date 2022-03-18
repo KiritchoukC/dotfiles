@@ -10,6 +10,7 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 luasnip.filetype_extend("javascriptreact", { "html" })
+luasnip.filetype_extend("javascript", { "html" })
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1

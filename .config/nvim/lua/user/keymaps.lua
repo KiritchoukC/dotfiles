@@ -65,7 +65,7 @@ keymap("n", "<leader>l", "o<ESC>", opts)
 -- insert a blank line above
 keymap("n", "<leader>L", "O<ESC>", opts)
 -- rename word under the caret and replace the occurences with '.'
-keymap("n", "<leader>r", "*Ncgn", opts)
+keymap("n", "<leader>rr", "*Ncgn", opts)
 -- close all the buffers but the current one
 keymap("n", "<leader>to", ":tabonly<CR>", opts)
 -- format the whole buffer
