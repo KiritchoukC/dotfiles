@@ -1,12 +1,39 @@
 [core]
-	autocrlf = false
+	autocrlf = true
+    pager = delta --dark
+
 [user]
 	email = clement.kiritchouk@protonmail.com
 	name = kiritchoukc
+
 [credential]
 	helper = store
+
 [alias]
     p = pull -v
     c = commit
     a = add
     co = checkout
+    s = status
+    psu = git push --set-upstream origin
+
+[mergetool "nvim"]
+    cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+
+[merge]
+    tool = nvim
+
+[mergetool]
+    prompt = false
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default

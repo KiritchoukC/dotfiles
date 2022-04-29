@@ -8,6 +8,7 @@ alias la='ls -a -l -h'
 alias cat='batcat'
 alias nvim='nvim.appimage'
 alias rgr='. ranger'
+alias nvu='sh $HOME/dotfiles/ignored/nvim-update.sh'
 
 # alias lvim='nvim -u ~/.local/share/lunarvim/lvim/init.lua --cmd "set runtimepath+=~/.local/share/lunarvim/lvim"'
 

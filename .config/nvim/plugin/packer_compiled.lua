@@ -177,6 +177,11 @@ _G.packer_plugins = {
     path = "/home/dcki/.local/share/nvim/site/pack/packer/opt/nvim-code-action-menu",
     url = "https://github.com/weilbith/nvim-code-action-menu"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/dcki/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
   ["nvim-lightbulb"] = {
     loaded = true,
     path = "/home/dcki/.local/share/nvim/site/pack/packer/start/nvim-lightbulb",
@@ -217,6 +222,12 @@ _G.packer_plugins = {
     path = "/home/dcki/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["persisted.nvim"] = {
+    config = { "\27LJ\2\nh\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\2\3\0B\0\2\0029\0\4\0'\2\1\0B\0\2\1K\0\1\0\19load_extension\14telescope\nsetup\14persisted\frequire\0" },
+    loaded = true,
+    path = "/home/dcki/.local/share/nvim/site/pack/packer/start/persisted.nvim",
+    url = "https://github.com/olimorris/persisted.nvim"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/dcki/.local/share/nvim/site/pack/packer/start/plenary.nvim",
@@ -252,10 +263,20 @@ _G.packer_plugins = {
     path = "/home/dcki/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
   },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/dcki/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/dcki/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
+  },
+  ["vim-wakatime"] = {
+    loaded = true,
+    path = "/home/dcki/.local/share/nvim/site/pack/packer/start/vim-wakatime",
+    url = "https://github.com/wakatime/vim-wakatime"
   },
   ["which-key.nvim"] = {
     loaded = true,
@@ -265,6 +286,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: persisted.nvim
+time([[Config for persisted.nvim]], true)
+try_loadstring("\27LJ\2\nh\0\0\3\0\5\0\f6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\0\0'\2\3\0B\0\2\0029\0\4\0'\2\1\0B\0\2\1K\0\1\0\19load_extension\14telescope\nsetup\14persisted\frequire\0", "config", "persisted.nvim")
+time([[Config for persisted.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)

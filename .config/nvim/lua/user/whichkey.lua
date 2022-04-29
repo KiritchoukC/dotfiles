@@ -159,6 +159,7 @@ local mappings = {
       "Workspace Symbols",
     },
   },
+
   s = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -195,6 +196,18 @@ local mappings = {
     p = {
       "<cmd>lua vim.diagnostic.goto_prev()<cr>",
       "Prev Diagnostic",
+    },
+  },
+
+  d = {
+    name = "Debug",
+    b = {
+      "<cmd>lua require'dap'.toggle_breakpoint()<cr>",
+      "Add breakpoint",
+    },
+    c = {
+      "<cmd>lua require'dap'.repl.open()<CR>",
+      "Continue",
     },
   },
 

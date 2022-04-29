@@ -49,16 +49,17 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
+  use "moll/vim-bbye" -- Bbye allows you to do delete buffers (close files) without closing your windows or messing up your layout
   use "nvim-lualine/lualine.nvim"
-  use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
+  use "akinsho/toggleterm.nvim"
   use "lukas-reineke/indent-blankline.nvim"
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use "tpope/vim-surround"
+  use "wakatime/vim-wakatime"
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -87,6 +88,9 @@ return packer.startup(function(use)
   } -- user friendly pop menu for lsp code actions
   use 'kosayoda/nvim-lightbulb' -- vscode lightbult - showing when a code action is available
 
+  -- Debugging
+  use 'mfussenegger/nvim-dap'
+
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use {"nvim-telescope/telescope-fzf-native.nvim", run = "make" }
@@ -98,8 +102,19 @@ return packer.startup(function(use)
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
+  -- Session manager
+  use({
+    "olimorris/persisted.nvim",
+    --module = "persisted", -- For lazy loading
+    config = function()
+      require("persisted").setup()
+      require("telescope").load_extension("persisted") -- To load the telescope extension
+    end,
+  })
+
   -- Git
   use "lewis6991/gitsigns.nvim"
+  use "tpope/vim-fugitive"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

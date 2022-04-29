@@ -1,2 +1,6 @@
 .git
 .config/configstore
+
+./config/nvim/sessions/*
+
+.config/nvim/sessions

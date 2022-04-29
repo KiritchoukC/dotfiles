@@ -1,4 +1,5 @@
 local options = {
+  shell = "/usr/bin/zsh",                             -- set default vim shell
   backup = false,                          -- creates a backup file
   clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
   cmdheight = 2,                           -- more space in the neovim command line for displaying messages
@@ -33,6 +34,8 @@ local options = {
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
+  laststatus = 3,                          -- use the same bottom line for all buffers/tabs
+  ff=dos,                                  -- remove the ^M characters
 }
 
 vim.opt.shortmess:append "c"
@@ -42,5 +45,5 @@ for k, v in pairs(options) do
 end
 
 --vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
+--vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work

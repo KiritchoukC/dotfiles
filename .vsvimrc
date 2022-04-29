@@ -30,6 +30,8 @@ nnoremap <leader>ta :vsc TestExplorer.RunAllTests<CR>
 nnoremap <leader>ti :vsc RunTestsInClass<CR>
 
 " navigation
+nnoremap <S-Right> gt
+nnoremap <S-Left> gT
 vnoremap <leader>ne :vsc View.NextError<CR>
 vnoremap <leader>nf :vsc Edit.GoToNextLocation<CR>
 vnoremap <leader>pf :vsc Edit.GoToPrevLocation<CR>
@@ -66,19 +68,6 @@ vnoremap <leader>/ :vsc Edit.ToggleLineComment<CR>
 nnoremap <leader>nu :vsc Project.ManageNugetPackages<CR>
 nnoremap <leader>ns :vsc Tools.ManageNugetPackagesforSolution<CR>
 nnoremap <leader>6 :vsc Build.BuildSolution<CR>
-
-""""""""""""""""""""""""""
-""""""""""""""" ET
-
-abbr bs BaseService
-abbr bcs BaseCacheService<
-abbr bmcs BaseMultiCacheService<
-abbr ibs IBaseService
-abbr ibcs IBaseCacheService<
-abbr ibmcs IBaseMultiCacheService<
-
-""""""""""""""" ET
-""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""
 """"""""""""""" SURROUND

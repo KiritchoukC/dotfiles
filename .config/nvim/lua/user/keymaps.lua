@@ -21,6 +21,13 @@ vim.g.maplocalleader = " "
 -- All --
 keymap("", "<C-A-L>", "<cmd>NvimTreeToggle<cr>", opts)
 
+-- Debug --
+keymap("", "<F5>", "<cmd>lua require'dap'.continue()<CR>", opts)
+keymap("", "<F8>", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
+keymap("", "<F9>", "<cmd>lua require'dap'.repl.open()<CR>", opts)
+keymap("", "<F10>", "<cmd>lua require'dap'.step_over()<CR>", opts)
+keymap("", "<F11>", "<cmd>lua require'dap'.step_into()<CR>", opts)
+
 -- Normal --
 -- Better window navigation
 keymap("n", "<C-n>", "<C-w>h", opts)
