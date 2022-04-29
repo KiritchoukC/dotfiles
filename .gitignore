@@ -4,3 +4,4 @@
 ./config/nvim/sessions/*
 
 .config/nvim/sessions
+.config/lazygit/state.yml
