@@ -2,83 +2,66 @@
 source ~/.vimrc
 
 nnoremap s <Nop>
-nnoremap gh :vsc Edit.QuickInfo<CR>
+nnoremap gh :vsc Edit.QuickInfo<CR> " show info popup where cursor is
 vnoremap <C-e> :vsc Edit.MoveSelectedLinesDown<CR>
 vnoremap <C-i> :vsc Edit.MoveSelectedLinesUp<CR>
 nnoremap gr :vsc Edit.FindAllReferences<CR>
 nnoremap <leader>gd :vsc Edit.GoToImplementation<CR>
-nnoremap <leader>hs :split<CR><C-k>ZZ<C-l>
-nnoremap <leader>to :wa<CR> :tabonly<CR>
+nnoremap <leader>hs :split<CR><C-k>ZZ<C-l> " start horizontal split
 
 " windows management
-nnoremap ZA :wa<CR> :vsc Window.CloseAllDocuments<CR>
-nnoremap ZP :wa<CR> :vsc Window.CloseAllButPinned<CR>
-nnoremap ZT :wa<CR> :vsc File.CloseAllButThis<CR>
-nnoremap ZW :vsc Window.Windows<CR>
-nnoremap <leader>gh :vsc Window.KeepTabOpen<CR>
-nnoremap <leader>gp :vsc Window.PinTab<CR>
-nnoremap <leader>wO :vsc Window.MoveToNextTabGroup<CR>
-nnoremap <leader>wN :vsc Window.MoveToPreviousTabGroup<CR>
-nnoremap <leader>wf :vsc Window.Float<CR>
-nnoremap <leader>wF :vsc Window.MoveToMainDocumentGroup<CR>
+nnoremap ZA :wa<CR> :vsc Window.CloseAllDocuments<CR> " Close all documents
+nnoremap ZP :wa<CR> :vsc Window.CloseAllButPinned<CR> " Close all documents except the pinned ones
+nnoremap ZT :wa<CR> :vsc File.CloseAllButThis<CR> " Close all documents except the current one
+nnoremap <leader>gh :vsc Window.KeepTabOpen<CR> " Keep temporary tab opened
+nnoremap <leader>gp :vsc Window.PinTab<CR> " Pin current document
+nnoremap <leader>wO :vsc Window.MoveToNextTabGroup<CR> " Move current document to next group of tabs (useful when in split mode)
+nnoremap <leader>wN :vsc Window.MoveToPreviousTabGroup<CR> " Move current document to previous group of tabs (useful when in split mode)
+nnoremap <leader>wf :vsc Window.Float<CR> " Make the current tab a floating window
+nnoremap <leader>wF :vsc Window.MoveToMainDocumentGroup<CR> " Make the current floating window a tab
 
 " tests
-nnoremap <leader>te :vsc TestExplorer.ShowTestExplorer<CR>
-nnoremap <leader>tt :vsc TestExplorer.RunAllTestsInContext<CR>
-nnoremap <leader>td :vsc TestExplorer.DebugAllTestsInContext<CR>
-nnoremap <leader>ta :vsc TestExplorer.RunAllTests<CR>
-nnoremap <leader>ti :vsc RunTestsInClass<CR>
+nnoremap <leader>te :vsc TestExplorer.ShowTestExplorer<CR> 
+nnoremap <leader>tt :vsc TestExplorer.RunAllTestsInContext<CR> " Run test under cursor
+nnoremap <leader>td :vsc TestExplorer.DebugAllTestsInContext<CR> " Run test under cursor in debug mode
+nnoremap <leader>ta :vsc TestExplorer.RunAllTests<CR> "Run all tests
 
 " navigation
-vnoremap <leader>ne :vsc View.NextError<CR>
-vnoremap <leader>nf :vsc Edit.GoToNextLocation<CR>
-vnoremap <leader>pf :vsc Edit.GoToPrevLocation<CR>
-vnoremap <leader>nr :vsc Edit.NextHighlightedReference<CR>
-vnoremap <leader>pr :vsc Edit.PreviousHighlightedReference<CR>
-nnoremap <leader>ne :vsc View.NextError<CR>
-nnoremap <leader>nf :vsc Edit.GoToNextLocation<CR>
-nnoremap <leader>pf :vsc Edit.GoToPrevLocation<CR>
-nnoremap <leader>nr :vsc Edit.NextHighlightedReference<CR>
-nnoremap <leader>pr :vsc Edit.PreviousHighlightedReference<CR>
+vnoremap <leader>ne :vsc View.NextError<CR> " Go to next error
+nnoremap <leader>ne :vsc View.NextError<CR> " Go to next error
+vnoremap <leader>nf :vsc Edit.GoToNextLocation<CR> "Go to next find
+nnoremap <leader>nf :vsc Edit.GoToNextLocation<CR> "Go to next find
+vnoremap <leader>pf :vsc Edit.GoToPrevLocation<CR> "Go to previous find
+nnoremap <leader>pf :vsc Edit.GoToPrevLocation<CR> "Go to previous find
+vnoremap <leader>nr :vsc Edit.NextHighlightedReference<CR> "Go to next reference
+nnoremap <leader>nr :vsc Edit.NextHighlightedReference<CR> "Go to next reference
+vnoremap <leader>pr :vsc Edit.PreviousHighlightedReference<CR> "Go to previous reference
+nnoremap <leader>pr :vsc Edit.PreviousHighlightedReference<CR> "Go to previous reference
 
 " views
-nnoremap <leader>ve :vsc View.ErrorList<CR>
-nnoremap <leader>vo :vsc View.Output<CR>
-nnoremap <leader>vc :vsc View.TfsPendingChanges<CR>
-nnoremap <leader>vr :vsc View.FindReferencesWindow1<CR>
-nnoremap <leader>vf :vsc View.FindResultsWindow1<CR>
-nnoremap <leader>vt :vsc TestExplorer.ShowTestExplorer<CR>
+nnoremap <leader>ve :vsc View.ErrorList<CR> " Open Error view
+nnoremap <leader>vo :vsc View.Output<CR> " Open Output view
+nnoremap <leader>vc :vsc View.TfsPendingChanges<CR> " Open Tfs view
+nnoremap <leader>vr :vsc View.FindReferencesWindow1<CR> " Open References view
+nnoremap <leader>vf :vsc View.FindResultsWindow1<CR> " Open Find view
+nnoremap <leader>vt :vsc TestExplorer.ShowTestExplorer<CR> " Open Test view
 
 " code edition
 nnoremap <leader>rr :vsc Refactor.Rename<CR><ESC>i
 nnoremap <leader>ro :vsc Refactor.ReorderParameters<CR>
 nnoremap <leader>bb :vsc EditorContextMenus.CodeWindow.Breakpoint.InsertBreakpoint<CR>
-nnoremap <leader>sa :vsc Tools.InvokeAceJumpCommand<CR>
-nnoremap <leader>z= :vsc Edit.AlignByEquals<CR>
-nnoremap <leader>z, :vsc Edit.AlignByString<CR>
-nnoremap <leader>// :vsc Edit.CommentSelection<CR>
-nnoremap <leader>?? :vsc Edit.UncommentSelection<CR>
-nnoremap <leader>zzu :vsc Edit.RemoveAndSort<CR>
+nnoremap <leader>sa :vsc Tools.InvokeAceJumpCommand<CR> " use with AceJump extension to enable smarter jump
+nnoremap <leader>z= :vsc Edit.AlignByEquals<CR> " use with Code alignment extension
+nnoremap <leader>z, :vsc Edit.AlignByString<CR> " use with Code alignment extension
+nnoremap <leader>zzu :vsc Edit.RemoveAndSort<CR> " sort usings
 
-vnoremap <leader>/ :vsc Edit.ToggleLineComment<CR>
-" nnoremap <leader>? :vsc Edit.UncommentSelection<CR>
+vnoremap gc :vsc Edit.ToggleLineComment<CR> " comment/uncomment selected lines
+nnoremap gcc :vsc Edit.ToggleLineComment<CR> " comment/uncomment current line
 
-nnoremap <leader>nu :vsc Project.ManageNugetPackages<CR>
-nnoremap <leader>ns :vsc Tools.ManageNugetPackagesforSolution<CR>
+nnoremap <leader>nu :vsc Project.ManageNugetPackages<CR> " open Nuget Package Manager for the current project
+nnoremap <leader>ns :vsc Tools.ManageNugetPackagesforSolution<CR> " open Nuget Package Manager for the whole solution
 nnoremap <leader>6 :vsc Build.BuildSolution<CR>
 
-""""""""""""""""""""""""""
-""""""""""""""" ET
-
-abbr bs BaseService
-abbr bcs BaseCacheService<
-abbr bmcs BaseMultiCacheService<
-abbr ibs IBaseService
-abbr ibcs IBaseCacheService<
-abbr ibmcs IBaseMultiCacheService<
-
-""""""""""""""" ET
-""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""
 """"""""""""""" SURROUND
