@@ -24,3 +24,8 @@ nnoremap <silent> dif ?public\|protected\|private\|function<CR>/{<CR>jdiB
 nnoremap <silent> <leader>nm /public\|protected\|private\|function<CR>f(b
 " find previous method
 nnoremap <silent> <leader>pm ?public\|protected\|private\|function<CR>f(b
+
+" change inner next parentheses
+nnoremap <silent> cinb /(<CR>cib
+" delete inner next parentheses
+nnoremap <silent> dinb /(<CR>dib
