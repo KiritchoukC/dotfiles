@@ -1,26 +1,3 @@
--- following options are the default
--- each of these are documented in `:help nvim-tree.OPTION_NAME`
-vim.g.nvim_tree_icons = {
-  default = "",
-  symlink = "",
-  git = {
-    unstaged = "",
-    staged = "S",
-    unmerged = "",
-    renamed = "➜",
-    deleted = "",
-    untracked = "U",
-    ignored = "◌",
-  },
-  folder = {
-    default = "",
-    open = "",
-    empty = "",
-    empty_open = "",
-    symlink = "",
-  },
-}
-
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
   return
@@ -74,13 +51,13 @@ nvim_tree.setup {
   },
   view = {
     width = 30,
-    height = 30,
     hide_root_folder = false,
     side = "left",
     mappings = {
       custom_only = false,
       list = {
-        { key = { "<Right>", "o", "<CR>" }, cb = tree_cb "edit" },
+        { key = { "o", "<CR>" }, cb = tree_cb "edit" },
+        { key = { "<Right>", "<Tab>" }, cb = tree_cb "preview" },
         { key = { "<Left>", "n" }, cb = tree_cb "close_node" },
         { key = "v", cb = tree_cb "vsplit" },
         { key = "h", cb = tree_cb "hsplit" },
@@ -97,6 +74,30 @@ nvim_tree.setup {
   actions = {
     open_file = {
       quit_on_open = true,
+    }
+  },
+  renderer = {
+    icons = {
+      glyphs = {
+        default = "",
+        symlink = "",
+        git = {
+          unstaged = "",
+          staged = "S",
+          unmerged = "",
+          renamed = "➜",
+          deleted = "",
+          untracked = "U",
+          ignored = "◌",
+        },
+        folder = {
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+        },
+      }
     }
   }
 }

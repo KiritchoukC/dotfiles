@@ -9,22 +9,23 @@ gui:
   theme:
     lightTheme: false # For terminals with a light background
     activeBorderColor:
-      - green
+      - blue
       - bold
     inactiveBorderColor:
       - white
     optionsTextColor:
       - blue
     selectedLineBgColor:
-      - pink
+      - underline
     selectedRangeBgColor:
-      - pink
+      - blue
     cherryPickedCommitBgColor:
       - cyan
     cherryPickedCommitFgColor:
       - blue
     unstagedChangesColor:
       - red
+      - reverse
   commitLength:
     show: true
   mouseEvents: true
@@ -38,7 +39,7 @@ gui:
   commandLogSize: 8
 git:
   paging:
-    pager: delta --dark --paging=never
+    pager: delta --dark --paging=never --side-by-side --line-numbers
     colorArg: always
     useConfig: false
   commit:

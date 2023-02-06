@@ -84,6 +84,15 @@ local mappings = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Buffers",
   },
+  b = {
+    name = "Buffers",
+    b = {
+      "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+      "List",
+    },
+    a = { "<cmd>%bd<CR>", "Close all"},
+    g = { "<cmd>w | %bd | e#<CR>", "Close all but the current one"},
+  },
   --["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>wa!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
@@ -94,6 +103,7 @@ local mappings = {
     "Find files",
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+  ["S"] = { "<cmd>Telescope grep_string theme=ivy<cr>", "Find Text under cursor" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
   p = {
@@ -108,8 +118,8 @@ local mappings = {
   g = {
     name = "Git",
     g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-    j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-    k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
+    e = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
+    i = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
     l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
     p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
     r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
@@ -170,6 +180,7 @@ local mappings = {
     R = { "<cmd>Telescope registers<cr>", "Registers" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
+    y = { "<cmd>Telescope neoclip plus<cr>", "Neoclip" },
   },
 
   t = {
@@ -208,6 +219,18 @@ local mappings = {
     c = {
       "<cmd>lua require'dap'.repl.open()<CR>",
       "Continue",
+    },
+  },
+
+  u = {
+    name = "Useless",
+    r = {
+      "<cmd>CellularAutomaton make_it_rain<cr>",
+      "Make it rain"
+    },
+    l = {
+      "<cmd>CellularAutomaton game_of_life<cr>",
+      "Game of life"
     },
   },
 

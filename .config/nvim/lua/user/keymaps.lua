@@ -34,6 +34,9 @@ keymap("n", "<C-n>", "<C-w>h", opts)
 keymap("n", "<C-e>", "<C-w>j", opts)
 keymap("n", "<C-i>", "<C-w>k", opts)
 keymap("n", "<C-o>", "<C-w>l", opts)
+-- navigate code
+keymap("n", "<C-l>", "<C-o>", opts)
+keymap("n", "<C-k>", "<C-i>", opts)
 -- Move windows
 keymap("n", "<leader>wN", "<C-w>H", opts)
 keymap("n", "<leader>wE", "<C-w>J", opts)
@@ -82,13 +85,17 @@ keymap("n", "<leader>vs", ":vs<CR>", opts)
 -- horizontal split
 keymap("n", "<leader>hs", ":split<CR>", opts)
 -- yank whole buffer
-keymap("n", "Y", "ggyG", opts)
+keymap("n", "Y", "ggyG<c-o>", opts)
 -- move next , to a new line
 keymap("n", "<leader>,," ,"f,a<CR><ESC>", opts)
 -- move next . to a new line
 keymap("n", "<leader>.." ,"f.i<CR><ESC>l", opts)
 -- replace the word under the cursor with the yank
 keymap("n", "<leader><leader>piw", "viwpyiw", opts)
+-- change inside next parens
+keymap("n", "cinb", "/(<CR>cib", opts)
+-- delete inside next parens
+keymap("n", "dinb", "/(<CR>dib", opts)
 
 -- Insert --
 -- Press ao fast to exit insert mode
@@ -96,9 +103,6 @@ keymap("i", "ao", "<ESC>", opts)
 keymap("i", "a;", "<ESC>A;<ESC>", opts)
 
 -- Visual --
--- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
 keymap("v", "<A-e>", ":m .+1<CR>==", opts)

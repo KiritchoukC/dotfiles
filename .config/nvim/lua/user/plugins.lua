@@ -41,84 +41,109 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
-  use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  use "numToStr/Comment.nvim" -- Easily comment stuff
-  use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
-  use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye" -- Bbye allows you to do delete buffers (close files) without closing your windows or messing up your layout
-  use "nvim-lualine/lualine.nvim"
-  use "ahmedkhalf/project.nvim"
-  use "lewis6991/impatient.nvim"
-  use "akinsho/toggleterm.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
-  use "goolord/alpha-nvim"
-  use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-  use "folke/which-key.nvim"
-  use "tpope/vim-surround"
-  use "wakatime/vim-wakatime"
+  use 'wbthomason/packer.nvim' -- Have packer manage itself
+  use 'nvim-lua/popup.nvim' -- An implementation of the Popup API from vim in Neovim
+  use 'nvim-lua/plenary.nvim' -- Useful lua functions used ny lots of plugins
+  use 'kyazdani42/nvim-web-devicons'
+  use 'kyazdani42/nvim-tree.lua'
+  use { 'akinsho/bufferline.nvim', tag='v3.*', requires = 'nvim-tree/nvim-web-devicons'}
+  use 'moll/vim-bbye' -- Bbye allows you to do delete buffers (close files) without closing your windows or messing up your layout
+  use 'nvim-lualine/lualine.nvim'
+  use 'ahmedkhalf/project.nvim'
+  use 'lewis6991/impatient.nvim'
+  use 'akinsho/toggleterm.nvim'
+  -- use 'lukas-reineke/indent-blankline.nvim'
+  use 'goolord/alpha-nvim'
+  use 'antoinemadec/FixCursorHold.nvim' -- This is needed to fix lsp doc highlight
+  use 'folke/which-key.nvim'
+  use {
+    'kylechui/nvim-surround',
+    config = function()
+      require('nvim-surround').setup({
+
+      })
+    end
+  }
+  use 'wakatime/vim-wakatime'
 
   -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
+  -- use 'lunarvim/colorschemes' -- A bunch of colorschemes you can try out
+  use 'lunarvim/darkplus.nvim'
+  use({
+      "catppuccin/nvim",
+      as = "catppuccin"
+  })
 
   -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
+  use 'hrsh7th/nvim-cmp' -- The completion plugin
+  use 'hrsh7th/cmp-buffer' -- buffer completions
+  use 'hrsh7th/cmp-path' -- path completions
+  use 'hrsh7th/cmp-cmdline' -- cmdline completions
+  use 'saadparwaiz1/cmp_luasnip' -- snippet completions
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'windwp/nvim-ts-autotag'
 
   -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  use 'L3MON4D3/LuaSnip' --snippet engine
+  use 'rafamadriz/friendly-snippets' -- a bunch of snippets to use
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use 'neovim/nvim-lspconfig' -- enable LSP
+  use 'williamboman/nvim-lsp-installer' -- simple to use language server installer
+  use 'tamago324/nlsp-settings.nvim' -- language server settings defined in json for
+  use 'jose-elias-alvarez/null-ls.nvim' -- for formatters and linters
   use {
     'weilbith/nvim-code-action-menu',
     cmd = 'CodeActionMenu',
   } -- user friendly pop menu for lsp code actions
-  use 'kosayoda/nvim-lightbulb' -- vscode lightbult - showing when a code action is available
+  use 'kosayoda/nvim-lightbulb' -- vscode lightbulb - showing when a code action is available
 
   -- Debugging
   use 'mfussenegger/nvim-dap'
 
   -- Telescope
-  use "nvim-telescope/telescope.nvim"
-  use {"nvim-telescope/telescope-fzf-native.nvim", run = "make" }
-
-  -- Treesitter
+  use 'nvim-telescope/telescope.nvim'
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
+    "AckslD/nvim-neoclip.lua",
+    requires = {
+      {'nvim-telescope/telescope.nvim'},
+    },
+    config = function()
+      require('neoclip').setup()
+    end,
   }
-  use "JoosepAlviste/nvim-ts-context-commentstring"
+
+  -- Mini
+  use { 'echasnovski/mini.nvim', branch = 'stable' }
+
+  -- Treesitter 
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+  }
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- Session manager
   use({
-    "olimorris/persisted.nvim",
-    --module = "persisted", -- For lazy loading
+    'olimorris/persisted.nvim',
+    --module = 'persisted', -- For lazy loading
     config = function()
-      require("persisted").setup()
-      require("telescope").load_extension("persisted") -- To load the telescope extension
+      require('persisted').setup()
+      require('telescope').load_extension('persisted') -- To load the telescope extension
     end,
   })
 
   -- Git
-  use "lewis6991/gitsigns.nvim"
-  use "tpope/vim-fugitive"
+  use 'lewis6991/gitsigns.nvim'
+  -- use 'tpope/vim-fugitive'
+
+  -- -- Useless
+  -- use 'eandrju/cellular-automaton.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
-    require("packer").sync()
+    require('packer').sync()
   end
 end)
