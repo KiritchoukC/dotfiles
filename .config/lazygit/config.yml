@@ -11,21 +11,22 @@ gui:
     activeBorderColor:
       - blue
       - bold
-    inactiveBorderColor:
-      - white
-    optionsTextColor:
-      - blue
+    # inactiveBorderColor:
+    #   - white
+    # optionsTextColor:
+    #   - blue
     selectedLineBgColor:
-      - underline
-    selectedRangeBgColor:
-      - blue
-    cherryPickedCommitBgColor:
-      - cyan
-    cherryPickedCommitFgColor:
-      - blue
-    unstagedChangesColor:
-      - red
       - reverse
+      # - underline
+    # selectedRangeBgColor:
+    #   - blue
+    # cherryPickedCommitBgColor:
+    #   - cyan
+    # cherryPickedCommitFgColor:
+    #   - blue
+    # unstagedChangesColor:
+    #   - red
+    #   - reverse
   commitLength:
     show: true
   mouseEvents: true
