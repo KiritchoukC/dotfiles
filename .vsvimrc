@@ -3,7 +3,7 @@ source ~/.vimrc
 
 nnoremap s <Nop>
 " show info popup where cursor is
-nnoremap gh :vsc Edit.QuickInfo<CR> 
+nnoremap gh :vsc Edit.QuickInfo<CR>
 vnoremap <C-e> :vsc Edit.MoveSelectedLinesDown<CR>
 vnoremap <C-i> :vsc Edit.MoveSelectedLinesUp<CR>
 nnoremap gr :vsc Edit.FindAllReferences<CR>
@@ -75,6 +75,8 @@ nnoremap <leader>vc :vsc View.TfsPendingChanges<CR>
 nnoremap <leader>vr :vsc View.FindReferencesWindow1<CR> 
 " Open Find view
 nnoremap <leader>vf :vsc View.FindResultsWindow1<CR> 
+" Open Application Insights View
+nnoremap <leader>va :vsc View.ApplicationInsightsSearch<CR> 
 " Open Test view
 nnoremap <leader>vt :vsc TestExplorer.ShowTestExplorer<CR> 
 

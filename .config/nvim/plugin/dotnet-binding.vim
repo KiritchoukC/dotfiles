@@ -25,6 +25,11 @@ nnoremap <silent> <leader>nm /public\|protected\|private\|function<CR>f(b
 " find previous method
 nnoremap <silent> <leader>pm ?public\|protected\|private\|function<CR>f(b
 
+" remove bracket encapsulation
+nnoremap <silent> <leader>di viB<diBpkVkkd
+" remove try catch encapsulation
+nnoremap <silent> <leader>dt ?try<CR>dd<iBdiBkP/catch<CR>kk3dddaBdd
+
 " change inner next parentheses
 nnoremap <silent> cinb /(<CR>cib
 " delete inner next parentheses
