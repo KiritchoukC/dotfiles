@@ -2,75 +2,112 @@
 source ~/.vimrc
 
 nnoremap s <Nop>
+" show info popup where cursor is
 nnoremap gh :vsc Edit.QuickInfo<CR>
 vnoremap <C-e> :vsc Edit.MoveSelectedLinesDown<CR>
 vnoremap <C-i> :vsc Edit.MoveSelectedLinesUp<CR>
 nnoremap gr :vsc Edit.FindAllReferences<CR>
 nnoremap <leader>gd :vsc Edit.GoToImplementation<CR>
-nnoremap <leader>hs :split<CR><C-k>ZZ<C-l>
-nnoremap <leader>to :wa<CR> :tabonly<CR>
+" start horizontal split
+nnoremap <leader>hs :split<CR><C-k>ZZ<C-l> 
 
-" windows management
-nnoremap ZA :wa<CR> :vsc Window.CloseAllDocuments<CR>
-nnoremap ZP :wa<CR> :vsc Window.CloseAllButPinned<CR>
-nnoremap ZT :wa<CR> :vsc File.CloseAllButThis<CR>
-nnoremap ZW :vsc Window.Windows<CR>
-nnoremap <leader>gh :vsc Window.KeepTabOpen<CR>
-nnoremap <leader>gp :vsc Window.PinTab<CR>
-nnoremap <leader>wO :vsc Window.MoveToNextTabGroup<CR>
-nnoremap <leader>wN :vsc Window.MoveToPreviousTabGroup<CR>
-nnoremap <leader>wf :vsc Window.Float<CR>
-nnoremap <leader>wF :vsc Window.MoveToMainDocumentGroup<CR>
+"------------------------
+" WINDOWS MANAGEMENT
+"------------------------
+" Close all documents
+nnoremap ZA :wa<CR> :vsc Window.CloseAllDocuments<CR> 
+" Close all documents except the pinned ones
+nnoremap ZP :wa<CR> :vsc Window.CloseAllButPinned<CR> 
+" Close all documents except the current one
+nnoremap ZT :wa<CR> :vsc File.CloseAllButThis<CR> 
+" Keep temporary tab opened
+nnoremap <leader>gh :vsc Window.KeepTabOpen<CR> 
+" Pin current document
+nnoremap <leader>gp :vsc Window.PinTab<CR> 
+" Move current document to next group of tabs (useful when in split mode)
+nnoremap <leader>wO :vsc Window.MoveToNextTabGroup<CR> 
+" Move current document to previous group of tabs (useful when in split mode)
+nnoremap <leader>wN :vsc Window.MoveToPreviousTabGroup<CR> 
+" Make the current tab a floating window
+nnoremap <leader>wf :vsc Window.Float<CR> 
+" Make the current floating window a tab
+nnoremap <leader>wF :vsc Window.MoveToMainDocumentGroup<CR> 
 
 " tests
-nnoremap <leader>te :vsc TestExplorer.ShowTestExplorer<CR>
-nnoremap <leader>tt :vsc TestExplorer.RunAllTestsInContext<CR>
-nnoremap <leader>td :vsc TestExplorer.DebugAllTestsInContext<CR>
-nnoremap <leader>ta :vsc TestExplorer.RunAllTests<CR>
-nnoremap <leader>ti :vsc RunTestsInClass<CR>
+nnoremap <leader>te :vsc TestExplorer.ShowTestExplorer<CR> 
+" Run test under cursor
+nnoremap <leader>tt :vsc TestExplorer.RunAllTestsInContext<CR> 
+" Run test under cursor in debug mode
+nnoremap <leader>td :vsc TestExplorer.DebugAllTestsInContext<CR> 
+"Run all tests
+nnoremap <leader>ta :vsc TestExplorer.RunAllTests<CR> 
 
 " navigation
-nnoremap <S-Right> gt
-nnoremap <S-Left> gT
-vnoremap <leader>ne :vsc View.NextError<CR>
-vnoremap <leader>nf :vsc Edit.GoToNextLocation<CR>
-vnoremap <leader>pf :vsc Edit.GoToPrevLocation<CR>
-vnoremap <leader>nr :vsc Edit.NextHighlightedReference<CR>
-vnoremap <leader>pr :vsc Edit.PreviousHighlightedReference<CR>
-nnoremap <leader>ne :vsc View.NextError<CR>
-nnoremap <leader>nf :vsc Edit.GoToNextLocation<CR>
-nnoremap <leader>pf :vsc Edit.GoToPrevLocation<CR>
-nnoremap <leader>nr :vsc Edit.NextHighlightedReference<CR>
-nnoremap <leader>pr :vsc Edit.PreviousHighlightedReference<CR>
+" Go to next error
+vnoremap <leader>ne :vsc View.NextError<CR> 
+" Go to next error
+nnoremap <leader>ne :vsc View.NextError<CR> 
+"Go to next find
+vnoremap <leader>nf :vsc Edit.GoToNextLocation<CR> 
+"Go to next find
+nnoremap <leader>nf :vsc Edit.GoToNextLocation<CR> 
+"Go to previous find
+vnoremap <leader>pf :vsc Edit.GoToPrevLocation<CR> 
+"Go to previous find
+nnoremap <leader>pf :vsc Edit.GoToPrevLocation<CR> 
+"Go to next reference
+vnoremap <leader>nr :vsc Edit.NextHighlightedReference<CR> 
+"Go to next reference
+nnoremap <leader>nr :vsc Edit.NextHighlightedReference<CR> 
+"Go to previous reference
+vnoremap <leader>pr :vsc Edit.PreviousHighlightedReference<CR> 
+"Go to previous reference
+nnoremap <leader>pr :vsc Edit.PreviousHighlightedReference<CR> 
 
 " views
-nnoremap <leader>ve :vsc View.ErrorList<CR>
-nnoremap <leader>vo :vsc View.Output<CR>
-nnoremap <leader>vc :vsc View.TfsPendingChanges<CR>
-nnoremap <leader>vr :vsc View.FindReferencesWindow1<CR>
-nnoremap <leader>vf :vsc View.FindResultsWindow1<CR>
-nnoremap <leader>vt :vsc TestExplorer.ShowTestExplorer<CR>
+" Open Error view
+nnoremap <leader>ve :vsc View.ErrorList<CR> 
+" Open Output view
+nnoremap <leader>vo :vsc View.Output<CR> 
+" Open Tfs view
+nnoremap <leader>vc :vsc View.TfsPendingChanges<CR> 
+" Open References view
+nnoremap <leader>vr :vsc View.FindReferencesWindow1<CR> 
+" Open Find view
+nnoremap <leader>vf :vsc View.FindResultsWindow1<CR> 
+" Open Application Insights View
+nnoremap <leader>va :vsc View.ApplicationInsightsSearch<CR> 
+" Open Test view
+nnoremap <leader>vt :vsc TestExplorer.ShowTestExplorer<CR> 
 
 " code edition
 nnoremap <leader>rr :vsc Refactor.Rename<CR><ESC>i
 nnoremap <leader>ro :vsc Refactor.ReorderParameters<CR>
 nnoremap <leader>bb :vsc EditorContextMenus.CodeWindow.Breakpoint.InsertBreakpoint<CR>
-nnoremap <leader>sa :vsc Tools.InvokeAceJumpCommand<CR>
-nnoremap <leader>z= :vsc Edit.AlignByEquals<CR>
-nnoremap <leader>z, :vsc Edit.AlignByString<CR>
-nnoremap <leader>// :vsc Edit.CommentSelection<CR>
-nnoremap <leader>?? :vsc Edit.UncommentSelection<CR>
-nnoremap <leader>zzu :vsc Edit.RemoveAndSort<CR>
+" use with AceJump extension to enable smarter jump
+nnoremap <leader>sa :vsc Tools.InvokeAceJumpCommand<CR> 
+" use with Code alignment extension
+nnoremap <leader>z= :vsc Edit.AlignByEquals<CR> 
+" use with Code alignment extension
+nnoremap <leader>z, :vsc Edit.AlignByString<CR> 
+" sort usings
+nnoremap <leader>zzu :vsc Edit.RemoveAndSort<CR> 
 
-vnoremap <leader>/ :vsc Edit.ToggleLineComment<CR>
-" nnoremap <leader>? :vsc Edit.UncommentSelection<CR>
+" comment/uncomment selected lines
+vnoremap gc :vsc Edit.ToggleLineComment<CR> 
+" comment/uncomment current line
+nnoremap gcc :vsc Edit.ToggleLineComment<CR> 
 
-nnoremap <leader>nu :vsc Project.ManageNugetPackages<CR>
-nnoremap <leader>ns :vsc Tools.ManageNugetPackagesforSolution<CR>
+" open Nuget Package Manager for the current project
+nnoremap <leader>nu :vsc Project.ManageNugetPackages<CR> 
+" open Nuget Package Manager for the whole solution
+nnoremap <leader>ns :vsc Tools.ManageNugetPackagesforSolution<CR> 
 nnoremap <leader>6 :vsc Build.BuildSolution<CR>
 
-""""""""""""""""""""""""""
-""""""""""""""" SURROUND
+
+"------------------------
+" SURROUND
+"------------------------
 
 " Surround simulating bindings
 nnoremap s( ciw(<C-r>")<Esc>
@@ -110,5 +147,3 @@ vnoremap S* c/*<C-r>"*/<Esc>
 " Surround in div tag and edit tag
 vnoremap St c<lt>div><CR><C-r>"<Esc>`<lt>lcw
 
-""""""""""""""" SURROUND
-""""""""""""""""""""""""""

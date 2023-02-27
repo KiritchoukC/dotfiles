@@ -1,0 +1,9 @@
+--ignore \.stow*
+--ignore \.git
+--ignore \.gitignore
+--ignore \.config/dconf/*
+--ignore \.oh-my*
+
+--ignore ^README.*
+--ignore ^LICENSE.*
+--ignore ^COPYING
