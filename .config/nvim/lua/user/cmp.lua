@@ -9,6 +9,8 @@ if not snip_status_ok then
 end
 
 require("luasnip/loaders/from_vscode").lazy_load()
+luasnip.filetype_extend("typescriptreact", { "html" })
+luasnip.filetype_extend("typescript", { "html" })
 luasnip.filetype_extend("javascriptreact", { "html" })
 luasnip.filetype_extend("javascript", { "html" })
 

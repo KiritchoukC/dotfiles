@@ -1,13 +1,73 @@
-" source ./.vimrc
-source ~/.vimrc
+" use local vimrc if exist
+"set exrc
+" show numbers in margin
+set nu
+" show numbers relative to the current line
+" set relativenumber
+" do not highlight search results
+set nohlsearch
+" do not hide inactive buffers
+"set hidden
+" do not beep for error messages
+"set noerrorbells
+" use 4 spaces for tabs
+set tabstop=4 softtabstop=4 shiftwidth=4
+" use indent in insert mode
+set expandtab
+" copy indent from current line when starting a new line
+set autoindent
+" autoindent on new line
+"set smartindent
+" prevent lines to wrap when reaching the edge of the window
+set nowrap
+" prevent from generating a .swp file
+"set noswapfile
+" prevent from generating a backup file on overwrite
+"set nobackup
+" where to keep the undo history
+"set undodir=~/.vim/undodir
+" use file for undo history
+"set undofile
+" show results during the search
+set incsearch
+" enable term colors
+"set termguicolors
+" keep an offset when scrolling
+set scrolloff=5
+"set scrolloff=8 sidescrolloff=5
+" show the current mode on the last line
+"set noshowmode
+" set a ruler at column 90
+"set colorcolumn=90
+" always show sign column
+"set signcolumn=yes
+" use 2 lines for the command line
+"set cmdheight=2
+" Always show status line
+set laststatus=2
+" enables command-line completion
+"set wildmenu
+" reload buffer when file is changed outside of vim
+"set autoread
+" command line history
+if &history < 1000
+  set history=1000
+endif
+" maximum number of tab pages to be opened by the |-p| command line
+if &tabpagemax < 50
+  set tabpagemax=50
+endif
+
+"set encoding=utf-8
 
 nnoremap s <Nop>
 " show info popup where cursor is
 nnoremap gh :vsc Edit.QuickInfo<CR>
+
 vnoremap <C-e> :vsc Edit.MoveSelectedLinesDown<CR>
 vnoremap <C-i> :vsc Edit.MoveSelectedLinesUp<CR>
 nnoremap gr :vsc Edit.FindAllReferences<CR>
-nnoremap <leader>gd :vsc Edit.GoToImplementation<CR>
+nnoremap <leader>gd :vsc Edit.GoToImplementation<CR><Esc>
 " start horizontal split
 nnoremap <leader>hs :split<CR><C-k>ZZ<C-l> 
 
@@ -63,6 +123,10 @@ nnoremap <leader>nr :vsc Edit.NextHighlightedReference<CR>
 vnoremap <leader>pr :vsc Edit.PreviousHighlightedReference<CR> 
 "Go to previous reference
 nnoremap <leader>pr :vsc Edit.PreviousHighlightedReference<CR> 
+" Go back
+nnoremap <C-t> :vsc View.NavigateBackward<CR>
+" Go forward
+nnoremap <C-T> :vsc View.NavigateForward<CR>
 
 " views
 " Open Error view
@@ -146,4 +210,187 @@ vnoremap S* c/*<C-r>"*/<Esc>
 "vnoremap St c<lt>div><CR><C-r>"<Esc>
 " Surround in div tag and edit tag
 vnoremap St c<lt>div><CR><C-r>"<Esc>`<lt>lcw
+
+" add field to constructor for dependency injection
+nnoremap <leader>zi $hvbb"zy/)<CR>kA,<CR><ESC>cc<ESC>"zpbx"xyiw>>>>>>/}<CR>O_<ESC>"xpa<space>=<space><ESC>"xpA;<ESC><C-O><C-O>$
+" Add interface
+nnoremap <leader>zI _ww"zyiwA,<space>I<esc>"zp
+" make string an interpolated string by adding $ at the beginning
+nnoremap <leader>zs ?"<CR>i$<ESC>``l
+
+" select outer method
+nnoremap vaa ?public\|protected\|private\|function<CR>{jVN/{<CR>%
+" select inner method
+nnoremap vai ?public\|protected\|private\|function<CR>/{<CR>jVk%k 
+" yank outer method
+nnoremap yaf ?public\|protected\|private\|function<CR>{jVN/{<CR>%y
+" yank outer method and paste below
+nnoremap yafp ?public\|protected\|private\|function<CR>{jVN/{<CR>%yn%o<ESC>p
+" cut outer method
+nnoremap daf ?public\|protected\|private\|function<CR>{VN/{<CR>%d
+" yank inner method
+nnoremap yif ?public\|protected\|private\|function<CR>/{<CR>jyiB
+" cut inner method
+nnoremap dif ?public\|protected\|private\|function<CR>/{<CR>jdiB
+
+" find next method
+nnoremap <leader>nm /public\|protected\|private\|function<CR>f(b
+" find previous method
+nnoremap <leader>pm ?public\|protected\|private\|function<CR>f(b
+
+" remove bracket encapsulation
+nnoremap <leader>di viB<diBpkVkkd
+" remove try catch encapsulation
+nnoremap <leader>dt ?try<CR>dd<iBdiBkP/catch<CR>kk3dddaBdd
+
+" change inner next parentheses
+nnoremap cinb /(<CR>cib
+" delete inner next parentheses
+nnoremap dinb /(<CR>dib
+
+let mapleader = " "
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sane redo.
+noremap U <C-r>
+" +/- increment and decrement.
+" move line down
+vnoremap <C-e> :m '>+1<CR>gv=gv
+" move line up
+vnoremap <C-i> :m '>-2<CR>gv=gv
+" join lines
+nnoremap <leader>j J
+vnoremap <leader>j J
+" get help for the command under the caret
+nnoremap <leader>k K
+vnoremap <leader>k K
+" reload .vimrc
+nnoremap <leader>x :so $MYVIMRC<CR>
+" save buffer
+nnoremap <leader>ww :wa<CR>
+" return to line before the caret
+nnoremap <leader>i i<CR><ESC>
+" return to line after the caret
+nnoremap <leader>a a<CR><ESC>
+" insert a blank line below
+nnoremap <leader>l o<ESC>
+" insert a blank line above
+nnoremap <leader>L O<ESC>
+" rename word under the caret and replace the occurences with '.'
+nnoremap <leader>r *Ncgn
+" rename word selected replace the occurences with '.'
+vnoremap <leader>r "zy:let @/='\V'.escape(@z, '/\')<CR>cgn
+" close all the buffers but the current one
+nnoremap <leader>to :tabonly<CR>
+" format the whole buffer
+nnoremap <leader>= gg=G<C-o>
+" vertical split
+nnoremap <leader>vs :vs<CR>
+" horizontal split
+nnoremap <leader>hs :split<CR>
+" yank whole buffer
+nnoremap Y ggyG
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" System clipboard
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" yank to system cb
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+" cut to system cb
+nnoremap <leader>d "+d
+vnoremap <leader>d "+d
+" past from system cb after caret
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
+" past from system cb before caret
+nnoremap <leader>P "+P
+vnoremap <leader>P "+P
+" yank the whole buffer to system cb
+nnoremap <leader>Y gg"+yG
+" cut the whole buffer to system cb
+nnoremap <leader>D gg"+dG
+
+" leader shortcuts
+nnoremap <leader>,, f,a<CR><ESC>
+nnoremap <leader>.. f.i<CR><ESC>
+nnoremap <leader>A ddO
+nnoremap <leader><leader>piw viwpyiw
+nnoremap <leader><leader>pp Vpyy
+
+" --- COLEMAK ---
+inoremap ao <ESC>
+inoremap a; <ESC>A;<ESC>
+
+" remapping hjkl to neio
+nnoremap n h
+vnoremap n h
+nnoremap e j
+vnoremap e j
+nnoremap i k
+vnoremap i k
+nnoremap o l
+vnoremap o l
+
+" fast neio moves
+nnoremap N ^
+vnoremap N ^
+nnoremap E 5j
+vnoremap E 5j
+nnoremap I 5k
+vnoremap I 5k
+nnoremap O $
+vnoremap O $
+
+" remapping vim neio to hjkl
+nnoremap k n
+nnoremap K N
+vnoremap k n
+vnoremap K N
+
+nnoremap j e
+nnoremap J E
+vnoremap j e
+vnoremap J E
+
+nnoremap h i
+nnoremap H I
+vnoremap h i
+vnoremap H I
+
+nnoremap L O
+nnoremap l o
+vnoremap L O
+vnoremap l o
+
+" neio text object
+nn viw viw
+nn vib vib
+nn vip vip
+nn viP viP
+nn viB viB
+nn vi' vi'
+nn vi" vi"
+nn vit vit
+
+" navigating windows
+noremap <leader>wn <C-w>h
+noremap <leader>we <C-w>j
+noremap <leader>wi <C-w>k
+noremap <leader>wo <C-w>l
+
+" moving windows
+noremap <leader>wN <C-w>H
+noremap <leader>wE <C-w>J
+noremap <leader>wI <C-w>K
+noremap <leader>wO <C-w>L
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VS Code
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if exists('g:vscode')
+    nnoremap <leader>ww :Wall<CR>
+endif
 

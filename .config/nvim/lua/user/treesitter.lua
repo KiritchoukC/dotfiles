@@ -14,13 +14,19 @@ configs.setup {
     enable = true,
   },
   highlight = {
-    enable = true, -- false will disable the whole extension
+    enable = false, -- false will disable the whole extension
     disable = { "" }, -- list of language that will be disabled
-    additional_vim_regex_highlighting = true,
+    additional_vim_regex_highlighting = false,
   },
   indent = { enable = false, disable = { "yaml" } },
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
-  },
+}
+
+
+local status_ok, comment_configs = pcall(require, "ts_context_commentstring")
+if not status_ok then
+  return
+end
+
+comment_configs.setup {
+    enable_autocmd = false
 }

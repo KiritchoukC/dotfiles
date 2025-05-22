@@ -61,7 +61,7 @@ mini_indentscope.setup({
     -- and total step numbers, returns wait time (in ms). See
     -- |MiniIndentscope.gen_animation()| for builtin options. To not use
     -- animation, supply `require('mini.indentscope').gen_animation('none')`.
-    animation = mini_indentscope.gen_animation('none')
+    animation = mini_indentscope.gen_animation.none()
   },
 
   -- Module mappings. Use `''` (empty string) to disable one.

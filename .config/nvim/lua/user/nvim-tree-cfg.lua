@@ -12,16 +12,17 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
   disable_netrw = true,
-  hijack_netrw = true,
-  open_on_setup = false,
-  ignore_ft_on_setup = {
-    "startify",
-    "dashboard",
-    "alpha",
+  tab = {
+    sync = {
+      open = false,
+      ignore = {
+          'startify',
+          'dashboard',
+          'alpha',
+      }
+    }
   },
-  open_on_tab = false,
-  hijack_cursor = false,
-  update_cwd = true,
+  sync_root_with_cwd = true,
   diagnostics = {
     enable = true,
     icons = {
@@ -33,7 +34,7 @@ nvim_tree.setup {
   },
   update_focused_file = {
     enable = true,
-    update_cwd = true,
+    update_root = true,
     ignore_list = {},
   },
   system_open = {
@@ -42,34 +43,18 @@ nvim_tree.setup {
   },
   filters = {
     dotfiles = false,
+    git_ignored = true,
     custom = {},
   },
   git = {
     enable = true,
-    ignore = true,
     timeout = 500,
   },
   view = {
     width = 30,
-    hide_root_folder = false,
     side = "left",
-    mappings = {
-      custom_only = false,
-      list = {
-        { key = { "o", "<CR>" }, cb = tree_cb "edit" },
-        { key = { "<Right>", "<Tab>" }, cb = tree_cb "preview" },
-        { key = { "<Left>", "n" }, cb = tree_cb "close_node" },
-        { key = "v", cb = tree_cb "vsplit" },
-        { key = "h", cb = tree_cb "hsplit" },
-        { key = "I", cb = nil }
-      },
-    },
     number = true,
     relativenumber = true,
-  },
-  trash = {
-    cmd = "trash",
-    require_confirm = true,
   },
   actions = {
     open_file = {

@@ -10,6 +10,8 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+keymap("n", "<C-\\>", "<cmd>lua require 'FTerm'.toggle()<CR>", opts)
+
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -20,6 +22,7 @@ vim.g.maplocalleader = " "
 
 -- All --
 keymap("", "<C-A-L>", "<cmd>NvimTreeToggle<cr>", opts)
+keymap("", "<C-h>", "<cmd>CodeActionMenu<cr>", opts)
 
 -- Debug --
 keymap("", "<F5>", "<cmd>lua require'dap'.continue()<CR>", opts)

@@ -38,9 +38,7 @@ packer.init {
   },
 }
 
--- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
   use 'wbthomason/packer.nvim' -- Have packer manage itself
   use 'nvim-lua/popup.nvim' -- An implementation of the Popup API from vim in Neovim
   use 'nvim-lua/plenary.nvim' -- Useful lua functions used ny lots of plugins
@@ -52,6 +50,7 @@ return packer.startup(function(use)
   use 'ahmedkhalf/project.nvim'
   use 'lewis6991/impatient.nvim'
   use 'akinsho/toggleterm.nvim'
+  use 'numToStr/FTerm.nvim'
   -- use 'lukas-reineke/indent-blankline.nvim'
   use 'goolord/alpha-nvim'
   use 'antoinemadec/FixCursorHold.nvim' -- This is needed to fix lsp doc highlight
@@ -88,31 +87,37 @@ return packer.startup(function(use)
   use 'rafamadriz/friendly-snippets' -- a bunch of snippets to use
 
   -- LSP
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
   use 'neovim/nvim-lspconfig' -- enable LSP
-  use 'williamboman/nvim-lsp-installer' -- simple to use language server installer
   use 'tamago324/nlsp-settings.nvim' -- language server settings defined in json for
   use 'jose-elias-alvarez/null-ls.nvim' -- for formatters and linters
+  use 'MunifTanjim/prettier.nvim'
+  use {
+    "jay-babu/mason-null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "jose-elias-alvarez/null-ls.nvim",
+    }
+  } 
+
   use {
     'weilbith/nvim-code-action-menu',
     cmd = 'CodeActionMenu',
   } -- user friendly pop menu for lsp code actions
   use 'kosayoda/nvim-lightbulb' -- vscode lightbulb - showing when a code action is available
+  use {
+      'kkoomen/vim-doge',
+      run = ':call doge#install()'
+  } -- docs generator
 
   -- Debugging
-  use 'mfussenegger/nvim-dap'
+  -- use 'mfussenegger/nvim-dap'
 
   -- Telescope
   use 'nvim-telescope/telescope.nvim'
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-  use {
-    "AckslD/nvim-neoclip.lua",
-    requires = {
-      {'nvim-telescope/telescope.nvim'},
-    },
-    config = function()
-      require('neoclip').setup()
-    end,
-  }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
   -- Mini
   use { 'echasnovski/mini.nvim', branch = 'stable' }

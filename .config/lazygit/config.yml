@@ -210,3 +210,5 @@ keybinding:
     init: 'i'
     update: 'u'
     bulkMenu: 'b'
+services:
+  'touringinsurance.visualstudio.com': 'azuredevops:touringinsurance.visualstudio.com'
